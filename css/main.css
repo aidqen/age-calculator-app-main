@@ -1,0 +1,105 @@
+*, *::before, *::after {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--Off-white);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+
+main {
+    background-color: var(--White);
+    padding: 2em;
+    border-radius: 10px 10px 8em 10px;
+}
+
+label {
+    margin-bottom: 0.5em;
+}
+
+input {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 9em;
+    height: 4em;
+}
+
+.inputs-container .container:last-child {
+    margin-right: 10em;
+}
+
+
+.border {
+    height: 1px;
+    width: 100%;
+    background-color: var(--Off-white);
+}
+
+.send-btn {
+    height: 2em;
+    width: 2.2em;
+    padding: 0;
+    border-radius: 50%;
+    border: 0;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    background-color: var(--Off-black);
+}
+
+
+input::placeholder {
+    font-weight: 700;
+}
+
+.inputs-container > * {
+    margin: 0 1.5em 0 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(136, 136, 136);
+}
+
+.inputs-container {
+    margin-bottom: 2em;
+}
+
+.results {
+    justify-content: start;
+    font-weight: 900;
+}
+
+.results > * {
+    font-style: italic;
+    font-size: 2.5em;
+    margin:0;
+}
+
+.years-res::after {
+    content: ' years';
+}
+
+.months-res::after {
+    content: ' months';
+}
+
+.days-res::after {
+    content: ' days';
+}
+
+:is(.days-res, .months-res, .years-res)::after {
+    color: black;
+}
+
+:is(.days-res, .months-res, .years-res) {
+    color: var(--Purple);
+}
+
+input:focus {
+    outline:1px solid var(--Purple);
+}

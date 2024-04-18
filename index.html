@@ -1,29 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/vars.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Age calculator app</title>
+  </head>
+  <body class="flex flex-center">
+    <main>
+      <form onsubmit="onCheckValidDate(this, event)" class="input-form flex flex-column">
+        <div class="inputs-container flex flex-row">
+          <div class="container flex flex-column">
+            <label for="day-input">day</label>
+            <input
+              type="number"
+              placeholder="DD"
+              id="day-input"
+              minlength="1"
+              maxlength="2"
+              min="1"
+              max="31"
+              required
+            />
+          </div>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Age calculator app</title>
+          <div class="container flex flex-column">
+            <label for="month-input">month</label>
+            <input
+              type="number"
+              placeholder="MM"
+              id="month-input"
+              minlength="1"
+              maxlength="2"
+              min="1"
+              max="12"
+              required
+            />
+          </div>
 
+          <div class="container flex flex-column">
+            <label for="year-input">year</label>
+            <input
+              type="number"
+              placeholder="MM"
+              id="year-input"
+              minlength="1"
+              maxlength="4"
+              required
+            />
+          </div>
+        </div>
 
-</head>
-<body>
+        <div class="flex flex-row flex-center">
+          <div class="border"></div>
+          <button class="send-btn flex flex-center">&#x2193;</button>
+        </div>
+      </form>
 
-  Day
-  DD
+      <div class="results flex flex-column">
+        <p class="years-res">- -</p>
+        <p class="months-res">- -</p>
+        <p class="days-res">- -</p>
+      </div>
+    </main>
 
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-</body>
+    <script src="js/service.js"></script>
+    <script src="js/controller.js"></script>
+  </body>
 </html>
