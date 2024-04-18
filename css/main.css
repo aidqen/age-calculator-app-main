@@ -50,6 +50,7 @@ input {
     color: white;
     cursor: pointer;
     background-color: var(--Off-black);
+    transition: 0.3s;
 }
 
 
@@ -102,4 +103,8 @@ input::placeholder {
 
 input:focus {
     outline:1px solid var(--Purple);
+}
+
+.send-btn.active {
+    background-color: var(--Purple);
 }

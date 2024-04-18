@@ -16,7 +16,7 @@
   </head>
   <body class="flex flex-center">
     <main>
-      <form onsubmit="onCheckValidDate(this, event)" class="input-form flex flex-column">
+      <form onsubmit="onCheckValidDate(this, event)" oninput="removeActiveState()" class="input-form flex flex-column">
         <div class="inputs-container flex flex-row">
           <div class="container flex flex-column">
             <label for="day-input">day</label>
@@ -61,7 +61,7 @@
 
         <div class="flex flex-row flex-center">
           <div class="border"></div>
-          <button class="send-btn flex flex-center">&#x2193;</button>
+          <button class="send-btn flex flex-center" onclick="addActiveState()">&#x2193;</button>
         </div>
       </form>
 

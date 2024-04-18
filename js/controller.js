@@ -3,11 +3,10 @@
 const todayObj = new Date()
 
 function onCalculate(elForm) {
+  addActiveState(elForm)
   const dayValue = elForm.querySelector('#day-input').value
   const monthValue = elForm.querySelector('#month-input').value
   const yearValue = elForm.querySelector('#year-input').value
-
-
 
   const birthdate = `${yearValue}-${monthValue}-${dayValue}`
   const birthdateObj = new Date(birthdate)
@@ -20,16 +19,16 @@ function onCalculate(elForm) {
 }
 
 function onCheckValidDate(elForm, ev) {
-    ev.preventDefault()
-    const daysInput = elForm.querySelector('#day-input')
-    const monthInput = elForm.querySelector('#month-input')
-    const yearInput = elForm.querySelector('#year-input')
-    const daysInMonth = getDaysInMonth(yearInput.value, monthInput.value)
-    if (daysInput.value > daysInMonth) {
-        console.log('hi')
-        return daysInput.setCustomValidity('Date is invalid')   
-    }
-    onCalculate(elForm)
+  ev.preventDefault()
+  const daysInput = elForm.querySelector('#day-input')
+  const monthInput = elForm.querySelector('#month-input')
+  const yearInput = elForm.querySelector('#year-input')
+  const daysInMonth = getDaysInMonth(yearInput.value, monthInput.value)
+  if (daysInput.value > daysInMonth) {
+    console.log('hi')
+    return daysInput.setCustomValidity('Date is invalid')
+  }
+  onCalculate(elForm)
 }
 
 function getAge(todayObj, birthdateObj) {
@@ -71,4 +70,15 @@ function subOfTwoNums(one, two) {
   }
 
   return big - small
+}
+
+function removeActiveState() {
+    const elBtn = document.querySelector('.send-btn')
+    elBtn.classList.remove('active')
+}
+
+function addActiveState(elForm) {
+  const elBtn = elForm.querySelector('.send-btn')
+  console.log(elBtn)
+  elBtn.classList.add('active')
 }
